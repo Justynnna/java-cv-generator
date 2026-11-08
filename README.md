@@ -84,6 +84,8 @@ The output files are saved in the application's working directory.
 
 ## 💡 Example
 
+[See sample cv](https://justynnna.github.io/java-cv-generator/example_cv.html)
+
 A CV can be built programmatically using a fluent API:
 
 ```java
