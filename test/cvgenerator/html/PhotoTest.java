@@ -20,13 +20,13 @@ class PhotoTest {
 
     @Test
     void shouldRenderImgTagWithCorrectSrcAndClass() {
-        Photo photo = new Photo("jan-kowalski.png");
+        Photo photo = new Photo("john-doe.png");
         photo.writeHTML(printStream);
         String html = outContent.toString();
 
         assertThat(html)
                 .contains("<img src=\"")
-                .contains("jan-kowalski.png")
+                .contains("john-doe.png")
                 .contains("\" class=\"profile-photo\">");
     }
 

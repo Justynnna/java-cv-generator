@@ -20,14 +20,14 @@ class ParagraphTest {
 
     @Test
     void shouldRenderParagraphWithContent() {
-        Paragraph paragraph = new Paragraph("Doświadczenie zawodowe");
+        Paragraph paragraph = new Paragraph("Education");
 
         paragraph.writeHTML(printStream);
         String html = outContent.toString();
 
         assertThat(html)
                 .contains("<p>")
-                .contains("Doświadczenie zawodowe")
+                .contains("Education")
                 .contains("</p>");
     }
 }

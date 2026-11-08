@@ -20,7 +20,7 @@ class ParagraphWithListTest {
 
     @Test
     void shouldRenderDivWithTitleAndList() {
-        ParagraphWithList paragraphWithList = new ParagraphWithList("Umiejętności");
+        ParagraphWithList paragraphWithList = new ParagraphWithList("Known technologies");
         paragraphWithList.addListItem("Git").addListItem("Docker");
 
         paragraphWithList.writeHTML(printStream);
@@ -28,7 +28,7 @@ class ParagraphWithListTest {
 
         assertThat(html)
                 .contains("<div class=\"cv-entry\">")
-                .contains("<h4>Umiejętności</h4>")
+                .contains("<h4>Known technologies</h4>")
                 .contains("<ul>")
                 .contains("Git")
                 .contains("Docker")

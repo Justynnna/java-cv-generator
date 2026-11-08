@@ -20,15 +20,15 @@ class SectionTest {
 
     @Test
     void shouldRenderSectionWithTitleAndParagraphs() {
-        Section section = new Section("Edukacja");
-        section.addParagraph("Akademia Górniczo-Hutnicza");
+        Section section = new Section("Education");
+        section.addParagraph("AGH University of Science and Technology");
 
         section.writeHTML(printStream);
         String html = outContent.toString();
 
         assertThat(html)
                 .contains("<section>")
-                .contains("Akademia Górniczo-Hutnicza")
+                .contains("AGH University of Science and Technology")
                 .contains("</section>");
     }
 }

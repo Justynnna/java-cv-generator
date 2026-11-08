@@ -1,17 +1,19 @@
 package cvgenerator.html;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DocumentTest {
+
     @Test
     void shouldCorrectlySerializeAndDeserializeDocumentWithInheritance() {
-        
-        Document originalDoc = new Document("Jan Kowalski - CV");
+
+        Document originalDoc = new Document("John Smith - CV");
         originalDoc.setPhoto("photo.jpg");
-        originalDoc.addSection("Umiejętności")
-                .addParagraph("Ogólne doświadczenie w IT")
-                .addParagraph(new ParagraphWithList("Znane technologie")
+        originalDoc.addSection("Skills")
+                .addParagraph("General experience in IT")
+                .addParagraph(new ParagraphWithList("Known technologies")
                         .addListItem("Java")
                         .addListItem("C++"));
 
@@ -20,45 +22,42 @@ class DocumentTest {
         Document deserializedDoc = Document.fromJson(json1);
 
         String json2 = deserializedDoc.toJson();
+
         assertThat(json1).contains("\"type\": \"ParagraphWithList\"");
-        assertThat(json1).contains("Znane technologie");
+        assertThat(json1).contains("Known technologies");
         assertThat(json1).contains("Java");
 
         assertThat(json2).isEqualTo(json1);
     }
 
     @Test
-    void shouldSerializeAndDeserializeWithPolymorphismCorrectly() {
-        
-        Document doc1 = new Document("Jan Kowalski - CV");
-        doc1.setPhoto("https://example.com/photo.jpg");
+    void shouldCorrectlySerializeAndDeserializePolymorphicObjects() {
 
-        Section section = doc1.addSection("Umiejętności");
-        section.addParagraph("Podstawowe informacje");
+        Document originalDoc = new Document("John Smith - CV");
+        originalDoc.setPhoto("https://example.com/photo.jpg");
 
-        ParagraphWithList skillsParagraph = new ParagraphWithList("Języki programowania");
+        Section skillsSection = originalDoc.addSection("Skills");
+        skillsSection.addParagraph("Basic information");
+
+        ParagraphWithList skillsParagraph =
+                new ParagraphWithList("Programming languages");
         skillsParagraph.addListItem("Java");
         skillsParagraph.addListItem("C++");
-        section.addParagraph(skillsParagraph);
 
-        
-        String json1 = doc1.toJson();
+        skillsSection.addParagraph(skillsParagraph);
 
-        
-        Document doc2 = Document.fromJson(json1);
+        String json1 = originalDoc.toJson();
 
-        
-        String json2 = doc2.toJson();
+        Document deserializedDoc = Document.fromJson(json1);
 
-        
-        
+        String json2 = deserializedDoc.toJson();
+
         assertThat(json1)
                 .contains("\"type\": \"ParagraphWithList\"")
-                .contains("Języki programowania")
+                .contains("Programming languages")
                 .contains("Java")
                 .contains("C++");
 
-        
         assertThat(json2).isEqualTo(json1);
-}
+    }
 }
