@@ -1,0 +1,56 @@
+{
+  "title": "John Doe - CV",
+  "photo": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg?utm_source\u003dpl.wikipedia.org\u0026utm_campaign\u003dindex\u0026utm_content\u003doriginal"
+  },
+  "sections": [
+    {
+      "title": "Education",
+      "paragraphs": [
+        {
+          "type": "Paragraph",
+          "content": "2021-2025 Bachelor of Science in Computer Science, Technical University"
+        },
+        {
+          "type": "ParagraphWithList",
+          "list": {
+            "elements": [
+              {
+                "content": "Oracle Certified Professional: Java SE Developer"
+              },
+              {
+                "content": "Advanced Data Structures and Algorithms in C++"
+              },
+              {
+                "content": "English for Professional Communication (C1 Level)"
+              }
+            ]
+          },
+          "content": "Certificates \u0026 Courses"
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "paragraphs": [
+        {
+          "type": "ParagraphWithList",
+          "list": {
+            "elements": [
+              {
+                "content": "Java (Object-Oriented Programming, Collections, Streams)"
+              },
+              {
+                "content": "C / C++ (Memory Management, Pointer Manipulation)"
+              },
+              {
+                "content": "Git \u0026 GitHub (Version Control, Collaborative Workflow)"
+              }
+            ]
+          },
+          "content": "Core Technologies"
+        }
+      ]
+    }
+  ]
+}

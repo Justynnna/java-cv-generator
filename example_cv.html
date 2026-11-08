@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>John Doe - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px 50px;
+            color: #2d3748;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            line-height: 1.6;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 35px;
+            position: relative;
+        }
+        .header-container::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+        }
+        .header-container h1 {
+            margin: 0;
+            font-size: 2.4em;
+            font-weight: 700;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+        }
+        .header-container img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            outline: 2px solid #cbd5e1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        section, .section {
+            margin-bottom: 30px;
+        }
+        section h2, h2 {
+            display: flex;
+            align-items: center;
+            color: #1e293b;
+            font-size: 1.25em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        section h2::before, h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #2563eb;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        section h2::after, h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #f1f5f9;
+            margin-left: 15px;
+        }
+        @media print {
+            body {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header-container">
+    <h1>John Doe - CV</h1>
+<img src="
+https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original
+" class="profile-photo">
+</header>
+  <section>
+    <h2>Education</h2>
+<p>
+2021-2025 Bachelor of Science in Computer Science, Technical University
+</p>
+  <div class="cv-entry">
+    <h4>Certificates & Courses</h4>
+<ul>
+   <li>
+Oracle Certified Professional: Java SE Developer
+   </li>
+   <li>
+Advanced Data Structures and Algorithms in C++
+   </li>
+   <li>
+English for Professional Communication (C1 Level)
+   </li>
+</ul>
+  </div>
+  </section>
+  <section>
+    <h2>Skills</h2>
+  <div class="cv-entry">
+    <h4>Core Technologies</h4>
+<ul>
+   <li>
+Java (Object-Oriented Programming, Collections, Streams)
+   </li>
+   <li>
+C / C++ (Memory Management, Pointer Manipulation)
+   </li>
+   <li>
+Git & GitHub (Version Control, Collaborative Workflow)
+   </li>
+</ul>
+  </div>
+  </section>
+</body>
+</html>
